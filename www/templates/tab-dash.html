@@ -1,0 +1,33 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding" overflow-scroll="true">
+    <h2>easynote <i class="icon ion-ionic"></i> </h2>
+    <div class="list card">
+      <div class="item item-divider">
+        <input type="text" ng-model="note.title" placeholder="um titulo interessante :)" autofocus="autofocus" style="background-color: #f5f5f5">
+      </div>
+      <div class="item item-body item-button-right">
+        <input type="text" style="width: 100%" ng-model="note.description">
+        <button class="button button-positive" ng-click="addItem()">
+          <i class="icon ion-archive"></i>
+        </button>
+      </div>
+    </div>
+
+    <div ng-repeat="item in items">
+      <div class="list card">
+          <div class="item item-divider">
+            <p>{{item.title}} </p>
+           </div>
+          <div class="item item-body item-button-right" style="-webkit-user-select: auto;">
+            {{item.description}}
+            <button class="button" ng-click="copyNote(item.description)">
+              <i class="icon ion-clipboard"></i>
+            </button>
+          </div>
+      </div>
+    </div>
+
+    {{lock}}
+
+  </ion-content>
+</ion-view>
